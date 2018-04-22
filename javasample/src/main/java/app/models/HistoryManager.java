@@ -3,12 +3,25 @@ package app.models;
 import java.util.ArrayList;
 
 /**
- * Created by StarKRE on 22.04.2018.
+ * Класс HistoryManager хранит в себе
+ * список истории в виде ArrayList.
  */
 
 public final class HistoryManager {
 
+    /**
+     * historyList - список историй.
+     */
+
     private ArrayList<History> historyList;
+
+    /**
+     * mockItems() - заполняет массив историями.
+     * Поскольку в данном проекте не определен
+     * принцип создания историй, существует
+     * временный метод mockItems().
+     * @return лист историй.
+     */
 
     public final ArrayList<History> mockItems() {
         this.historyList = new ArrayList<>();
@@ -21,6 +34,10 @@ public final class HistoryManager {
         }
         return historyList;
     }
+
+    /**
+     *Стандартный геттер списка историй.
+     */
 
     public final ArrayList<History> getHistoryList() {
         return historyList;

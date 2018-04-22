@@ -16,7 +16,7 @@ import app.models.HistoryManager;
 public final class GestureRecyclerFragment extends AbstractRecyclerFragment {
 
     @SuppressLint("ValidFragment")
-    public GestureRecyclerFragment(HistoryManager historyManager) {
+    public GestureRecyclerFragment(final HistoryManager historyManager) {
         super(historyManager);
     }
 
@@ -26,7 +26,7 @@ public final class GestureRecyclerFragment extends AbstractRecyclerFragment {
         this.adapter = this.createAdapter();
         this.recyclerView.setAdapter(adapter);
         GestureKt.enableGestures(
-                recyclerView,
+                this.recyclerView,
                 ItemTouchHelper.UP | ItemTouchHelper.DOWN,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT,
                 null

@@ -17,7 +17,7 @@ import app.models.HistoryManager;
 public final class MultipleChoiceRecyclerFragment extends AbstractRecyclerFragment {
 
     @SuppressLint("ValidFragment")
-    public MultipleChoiceRecyclerFragment(HistoryManager historyManager) {
+    public MultipleChoiceRecyclerFragment(final HistoryManager historyManager) {
         super(historyManager);
     }
 
@@ -35,7 +35,7 @@ public final class MultipleChoiceRecyclerFragment extends AbstractRecyclerFragme
         adapter.setItems(historyManager.mockItems());
         adapter.setChoiceMode(ChoiceMode.MULTIPLE);
         adapter.setOnClick((view1, position) -> {
-            History history = adapter.getItems().get(position);
+            final History history = adapter.getItems().get(position);
             Toast.makeText(getActivity(), this.createText(history), Toast.LENGTH_SHORT).show();
             return null;
         });
@@ -43,7 +43,7 @@ public final class MultipleChoiceRecyclerFragment extends AbstractRecyclerFragme
     }
 
     private String createText(final History history){
-        return "Item clicked : " + history.getId() + " (" + adapter.getSelectedItemViewCount()
-                + " selected)";
+        return "Выбрана история : " + history.getId() + " (" + adapter.getSelectedItemViewCount()
+                + " выбрано)";
     }
 }
