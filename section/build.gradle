@@ -1,0 +1,13 @@
+apply from: '../library.gradle'
+apply plugin: 'kotlin-android'
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':core')
+
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "com.android.support:recyclerview-v7:$ANDROID_APPCOMPAT_VERSION"
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "com.nhaarman:mockito-kotlin-kt1.1:1.5.0"
+}
